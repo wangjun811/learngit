@@ -3,15 +3,4 @@ change again
 
 second github
 
-2
-
-<<<<<<< Updated upstream
-
-change11
-
-change2
-=======
-change2
-
-chang3
->>>>>>> Stashed changes
+rollback2
