@@ -1,0 +1,165 @@
+主要页面
+	https://github.com/
+	http://10.20.247.250/ac_portal/default/pc.html?template=default&tabs=pwd&pop=0&type=logout&username=wang_jun6
+	http://172.16.101.67:8787/jenkins/job/tcms_fee_Automatic_package_deploy_project/
+	http://pha.uisftech.com/
+	http://192.168.30.43:8088/nexus/content/groups/public/
+	http://pha.uisftech.com/diffusion/32/
+	http://172.16.101.67:9000/projects?sort=-analysis_date&view=leak
+	http://172.16.100.78:8761/
+
+web	
+	https://blog.csdn.net/u011145904/article/details/77745777
+	https://www.cnblogs.com/chenpi/p/5434537.html
+	https://www.cnblogs.com/Michael2397/p/7891072.html
+	https://www.cnblogs.com/mmykdbc/p/9055304.html
+	https://www.cnblogs.com/hongmoshui/p/7994759.html
+	https://edu.csdn.net/course/detail/5386
+	https://www.cnblogs.com/1024Community/p/8589403.html
+	http://www.cnblogs.com/fangjian0423/p/servletContainer-tomcat-urlPattern.html#springmvc
+	https://blog.csdn.net/hzy38324/article/details/78360525?utm_source=gold_browser_extensionhttps://www.cnblogs.com/ruiati/p/6635453.html
+	https://gitee.com/explore/starred/web-app-develop?lang=Java
+	https://my.oschina.net/pingpangkuangmo/blog/384580
+
+mysql
+	https://www.imooc.com/article/17292
+	https://blog.51cto.com/2839840/2057806?utm_source=oschina-app
+	https://blog.51cto.com/2839840/1946283
+	https://www.cnblogs.com/yycc/p/7338894.html
+	https://www.cnblogs.com/shockerli/p/1000-plus-line-mysql-notes.html
+	https://www.cnblogs.com/xuan584521/p/6366541.html
+	https://www.cnblogs.com/xujishou/p/6306765.html
+	https://www.jb51.net/article/116028.htm
+	https://www.cnblogs.com/crazylqy/category/625963.html
+	https://www.2cto.com/database/201709/676648.html
+	https://www.cnblogs.com/chenqionghe/p/4845693.html
+	https://www.cnblogs.com/morewindows0/category/1020652.html
+	https://blog.csdn.net/tongdanping/article/details/79878302
+	https://www.cnblogs.com/zhoujinyi/p/3437475.html
+	https://www.cnblogs.com/weizhixiang/p/5914120.html
+	https://blog.csdn.net/u014227785/article/details/80178709
+	https://www.cnblogs.com/lcword/p/8038352.html
+	https://www.cnblogs.com/zhangs1986/p/4914125.html
+	https://www.cnblogs.com/chenshishuo/p/5030029.html
+	https://blog.csdn.net/ygqygq2/article/details/78390985
+	https://www.cnblogs.com/zjhs/p/3147905.html
+	https://blog.csdn.net/ly8951677/article/details/76338460
+	https://www.cnblogs.com/mjbrian/p/9282938.html
+	
+linux
+	https://blog.csdn.net/qq_40820862/article/details/81450567
+	https://www.cnblogs.com/lbole/archive/2018/04/25/8904298.html
+	https://blog.csdn.net/qq_39135287/article/details/84189397
+	https://www.cnblogs.com/gaojun/p/3359355.html
+	
+springboot
+	https://blog.csdn.net/forezp/article/details/70341818
+	https://blog.csdn.net/lijiangjava/article/details/51088564
+	https://www.cnblogs.com/micrari/p/7612962.html
+	https://blog.csdn.net/xiaobu201314/article/details/82970636
+	https://blog.csdn.net/likun557/article/details/53214107
+	https://blog.csdn.net/qq_26562641/article/details/54285942
+	https://www.cnblogs.com/junzi2099/p/8274813.html
+	https://www.cnblogs.com/guzhou-ing/p/6445159.html
+	https://www.cnblogs.com/fangjian0423/p/spring-mybatis-MapperScannerConfigurer-analysis.html
+	http://www.cnblogs.com/best/p/5648740.html
+	https://www.cnblogs.com/yixianyixian/p/8372832.html
+	https://blog.csdn.net/myth_g/article/details/78913293
+	https://blog.csdn.net/benhuo931115/article/details/74611464/
+	https://blog.csdn.net/u012291108/article/list/4
+	https://www.cnblogs.com/shangxiaofei/p/7298629.html
+	https://blog.csdn.net/matthew_zhang/article/details/72511886
+	https://segmentfault.com/a/1190000013341344?utm_source=tag-newest
+	https://www.cnblogs.com/liongong/p/9901162.html
+	https://www.cnblogs.com/GarfieldEr007/p/7077925.html
+	https://blog.csdn.net/lmb55/article/details/82470388
+	https://blog.csdn.net/zdyueguanyun/article/details/82587406
+	
+springcloud
+	https://blog.csdn.net/haoxin963/article/details/82217548
+	https://blog.csdn.net/qq_33314107/article/details/80821736
+	https://blog.csdn.net/forezp/article/details/70148833/
+	https://springcloud.cc/
+	https://blog.csdn.net/u010904188/article/details/80814025
+	https://blog.csdn.net/qq32933432/article/details/89375630
+	https://blog.csdn.net/sq4521/article/details/90417562
+	
+线程
+	http://www.cnblogs.com/dolphin0520/p/3920397.html
+	https://blog.csdn.net/chuchus/article/details/50801993
+	https://www.cnblogs.com/dolphin0520/p/3932921.html
+	https://blog.csdn.net/lijiangJava/article/details/52371089
+	https://www.cnblogs.com/carmanloneliness/p/3516405.html
+	https://blog.csdn.net/qq193423571/article/details/81209387
+	https://www.cnblogs.com/cz123/p/7693064.html
+	https://www.cnblogs.com/dolphin0520/p/3920373.html
+	http://www.importnew.com/22011.html
+	https://segmentfault.com/blog/ressmix_multithread?page=2
+	https://blog.csdn.net/canot/article/details/51087772
+	https://blog.csdn.net/lc138544/article/details/84496134
+	https://blog.csdn.net/wei_ya_wen/article/details/19344939
+	
+开源
+	https://blog.csdn.net/qq_32558577/article/details/79579286
+	http://www.cnblogs.com/vitah/p/3612473.html
+	https://blog.csdn.net/lixin88/article/details/55518350
+	https://www.cnblogs.com/ximiaomiao/p/7140456.html
+	https://blog.csdn.net/gytha_1/article/details/78718120
+	https://www.cnblogs.com/AlanLee/p/6198413.html
+	https://blog.csdn.net/qq_31828515/article/details/62893425
+	https://blog.csdn.net/yangfengjueqi/article/details/61668381
+	https://blog.csdn.net/lingbo229/article/details/80761778
+	https://blog.csdn.net/gaoxiang24/article/details/79390518
+	https://blog.csdn.net/weixin_42156906/article/details/80243903
+	https://blog.csdn.net/wangzhanzheng/article/details/80801059
+	https://www.cnblogs.com/cyfonly/p/5954614.html
+	https://blog.csdn.net/huang_wu_yao_xin/article/details/83988728
+	https://www.cnblogs.com/rjzheng/p/8994962.html
+	https://www.cnblogs.com/hqbhonker/p/5092300.html
+	https://www.cnblogs.com/songgj/p/8965580.html
+	https://blog.csdn.net/u010425776/article/details/79516298
+	https://www.cnblogs.com/rjzheng/p/10164667.html
+	https://blog.csdn.net/beitacat/article/det
+	https://www.cnblogs.com/wangzhongqiu/p/6736092.htmlails/81141002
+	http://ifeve.com/redis-lock/
+	https://www.cnblogs.com/xdp-gacl/p/4261895.html
+	https://my.oschina.net/marvelcode?tab=newest&catalogId=5781458
+	https://blog.csdn.net/u013412772/article/details/73648537
+	https://www.cnblogs.com/zhjh256/p/8512392.html
+	https://www.cnblogs.com/zhjh256/
+	https://me.csdn.net/lijiangJava
+	https://blog.csdn.net/linuu/article/list/5
+	https://blog.csdn.net/linuu
+	
+java
+	https://www.cnblogs.com/liwendeboke/p/6027063.html
+	https://www.cnblogs.com/lzq198754/p/5780340.html
+	http://www.cnblogs.com/dingyingsi/p/3760730.html
+	http://www.cnblogs.com/ityouknow/p/5603287.html
+	https://blog.csdn.net/lanchunhui/article/details/50739800
+	https://www.cnblogs.com/coprince/p/8603492.html
+	https://blog.csdn.net/qq_31655965/article/details/54746235
+	https://www.cnblogs.com/byrhuangqiang/p/3924985.html
+	https://www.cnblogs.com/jiangzhaowei/p/7399522.html
+	https://blog.csdn.net/tyrroo/article/details/79072796
+	https://www.cnblogs.com/monkey0307/p/8328821.html
+	https://www.cnblogs.com/buptldf/p/4959480.html
+	https://www.cnblogs.com/ITtangtang/
+	https://www.cnblogs.com/1024Community/p/honery.html
+	https://blog.csdn.net/qq_34337272/article/details/82177383
+	https://www.cnblogs.com/rjzheng/
+	http://www.cnblogs.com/leefreeman/default.aspx?page=2
+	https://www.cnblogs.com/xrq730/
+	https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000
+	https://www.cnblogs.com/linzhanfly/p/9686941.html
+	https://blog.csdn.net/lemon89/article/details/51477497
+	https://blog.csdn.net/sun_promise/article/details/51132916
+	https://www.cnblogs.com/andywithu/p/7404101.html
+	https://blog.csdn.net/darrensty/article/details/79283146
+	
+	
+	
+	
+	
+	
+	
