@@ -1,0 +1,6 @@
+server:
+  port: 8086
+  context-path: /spring-quartz
+  
+logging:
+  config: classpath:log4j2.xml
