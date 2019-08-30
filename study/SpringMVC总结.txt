@@ -1,0 +1,183 @@
+
+
+DispatchServlet普通rest请求概述
+	在浏览器发请求:http://localhost:8080/springmvc/hello
+	进入DispatchServlet的doDispatch方法
+		1.获取HandlerExecutionChain(该类里面有根据/hello请求路径匹配上的@RequetMapping("/hello")注解对应的方法，称之为handler，还有请求路径对应的拦截器)，
+		  获取方式是遍历handlerMappings，调用handlerMapping的getHandler方法获取到，如下对应获取代码，获取到
+		  
+		  protected HandlerExecutionChain getHandler(HttpServletRequest request) throws Exception {
+			for (HandlerMapping hm : this.handlerMappings) {
+				if (logger.isTraceEnabled()) {
+					logger.trace(
+							"Testing handler map [" + hm + "] in DispatcherServlet with name '" + getServletName() + "'");
+				}
+				HandlerExecutionChain handler = hm.getHandler(request);
+				if (handler != null) {
+					return handler;
+				}
+			}
+			return null;
+		}
+		
+		2.获取HandlerAdapter,根据HandlerExecutionChain去获取，遍历handlerAdapters，调用handlerAdapter的supports方法，如果handlerAdapter支持传入的handler，
+		  则返回对应HandlerAdapter，返回的是RequestMappingHandlerAdapter
+		  
+		  protected HandlerAdapter getHandlerAdapter(Object handler) throws ServletException {
+			for (HandlerAdapter ha : this.handlerAdapters) {
+				if (logger.isTraceEnabled()) {
+					logger.trace("Testing handler adapter [" + ha + "]");
+				}
+				if (ha.supports(handler)) {
+					return ha;
+				}
+			}
+			throw new ServletException("No adapter for handler [" + handler +
+					"]: The DispatcherServlet configuration needs to include a HandlerAdapter that supports this handler");
+		}
+
+		3.执行该请求对应的拦截器的preHandle方法，在HandlerExecutionChain中遍历执行preHandle方法，如下代码
+			boolean applyPreHandle(HttpServletRequest request, HttpServletResponse response) throws Exception {
+				HandlerInterceptor[] interceptors = getInterceptors();
+				if (!ObjectUtils.isEmpty(interceptors)) {
+					for (int i = 0; i < interceptors.length; i++) {
+						HandlerInterceptor interceptor = interceptors[i];
+						if (!interceptor.preHandle(request, response, this.handler)) {
+							triggerAfterCompletion(request, response, null);
+							return false;
+						}
+						this.interceptorIndex = i;
+					}
+				}
+				return true;
+			}
+			
+		4.HandlerAdapter执行handle方法，如下代码，该方法会将request中的请求参数进行转换绑定，如果类中有@ModelAttribute注解修饰的方法，则先执行,
+		  最后执行handler，并将ModelAndView返回
+		  // Actually invoke the handler.
+		  mv = ha.handle(processedRequest, response, mappedHandler.getHandler());
+
+		5.执行该请求对应拦截器的postHandle方法，在HandlerExecutionChain中遍历执行postHandle方法
+		  mappedHandler.applyPostHandle(processedRequest, response, mv);
+		
+		6.处理handler运行结果
+		  processDispatchResult(processedRequest, response, mappedHandler, mv, dispatchException);
+		  1）判断是否执行有异常，如有则匹配对应的异常ModelAndView
+		  2）如果ModelAndView(非异常或异常)不为空，执行下面代码，渲染页面
+			 render(mv, request, response);
+				a)解析匹配视图，匹配上InternalResourceView
+				b)最后调用InternalResourceView的renderMergedOutputModel方法，请求转发到对应页面，如下代码：
+				protected void renderMergedOutputModel(
+					Map<String, Object> model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+					// Expose the model object as request attributes.
+					exposeModelAsRequestAttributes(model, request);
+
+					// Expose helpers as request attributes, if any.
+					exposeHelpers(request);
+
+					// Determine the path for the request dispatcher.
+					String dispatcherPath = prepareForRendering(request, response);
+
+					// Obtain a RequestDispatcher for the target resource (typically a JSP).
+					RequestDispatcher rd = getRequestDispatcher(request, dispatcherPath);
+					if (rd == null) {
+						throw new ServletException("Could not get RequestDispatcher for [" + getUrl() +
+								"]: Check that the corresponding file exists within your web application archive!");
+					}
+
+					// If already included or response already committed, perform include, else forward.
+					if (useInclude(request, response)) {
+						response.setContentType(getContentType());
+						if (logger.isDebugEnabled()) {
+							logger.debug("Including resource [" + getUrl() + "] in InternalResourceView '" + getBeanName() + "'");
+						}
+						rd.include(request, response);
+					}
+
+					else {
+						// Note: The forwarded resource is supposed to determine the content type itself.
+						if (logger.isDebugEnabled()) {
+							logger.debug("Forwarding to resource [" + getUrl() + "] in InternalResourceView '" + getBeanName() + "'");
+						}
+						rd.forward(request, response);
+					}
+				}
+			
+		  3）执行该请求对应拦截器的afterCompletion方法，在HandlerExecutionChain中遍历执行afterCompletion方法
+		  
+		  
+		  
+DispatchServlet中对应的配置及属性类概述
+
+	1.springmvc.xml未配置
+		<mvc:default-servlet-handler/>
+		<mvc:annotation-driven/>
+		
+		DispatchServlet
+		
+			handlerAdapters
+				org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter
+				org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter
+				org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter
+				
+			handlerExceptionResolvers
+				org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver
+				org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver
+				org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver
+				
+			handlerMappings	
+				org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping
+				org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping
+				
+				
+				
+	2.springmvc.xml配置了
+		<mvc:default-servlet-handler/>
+		<mvc:annotation-driven/>
+		
+		DispatchServlet
+		
+			handlerAdapters
+				org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter
+				org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter
+				org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter
+				
+			handlerExceptionResolvers
+				org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver
+					注：
+						当handler执行抛出异常后，查找抛出异常方法的类里面加了@ExceptionHandler且配置的异常类是抛出异常类，
+						如有则匹配上，@ExceptionHandler配置的方法返回ModelAndView，将异常信息放入，设置转发的显示错误页面，如下配置对应除0异常：
+						@ExceptionHandler({ArithmeticException.class})
+						public ModelAndView handlArithmeticException(Exception ex) {
+							System.out.println("出现异常了: " + ex);
+							ModelAndView mv = new ModelAndView("error");
+							mv.addObject("exception", ex);
+							return mv;
+						}
+						如果没有匹配上，则查找@ControllerAdvice注解配置类下面的@ExceptionHandler配置的方法，匹配方式同上
+				org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver
+				org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver
+				注：
+					当加了如下配置，handlerExceptionResolvers会新增org.springframework.web.servlet.handler.SimpleMappingExceptionResolver，
+					该类的作用是，当handler执行抛出异常后，查找该类配置中对应的异常，找到对应的页面配置，如抛出数组越界异常，就会匹配转发到error页面，
+					且request作用域会携带exception异常，可以在error页面中显示出来
+						<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+							<property name="exceptionAttribute" value="exception"></property>
+							<property name="exceptionMappings">
+								<props>
+									<prop key="java.lang.ArrayIndexOutOfBoundsException">error</prop>
+								</props>
+							</property>
+						</bean>
+				
+				
+			handlerMappings	
+				org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+				org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping
+				org.springframework.web.servlet.handler.SimpleUrlHandlerMapping
+			
+			
+			
+			
+SpringMVC静态资源请求概述
